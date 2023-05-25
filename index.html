@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APS </title>
+    <style>
+        /* Estilo da navbar */
+        body{
+            background-color: rgb(28,28,28);
+        }
+
+        h1{
+            color: white;
+        }
+
+        p{
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            border-radius: 10px; /* bordas arredondadas */
+            display: flex; /* distribuição flexível dos itens */
+            justify-content: space-evenly; /* espaçamento igual entre os itens */
+        }
+
+        li {
+            float: none;
+            text-align: center;
+        }
+
+        li a {
+            display: block;
+            color: rgb(241, 13, 13);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-radius: 10px; /* bordas arredondadas */
+        }      
+
+    </style>
+      <style>
+        .slider-container {
+          width: 600px; /* Largura do carrossel */
+          height: 500px; /* Altura do carrossel */
+          overflow: hidden; /* Oculta o conteúdo que excede as dimensões do carrossel */
+          position: relative; /* Define a posição do carrossel */
+        }
+    
+        .slider {
+          width: 100%; /* Largura do carrossel */
+          height: 100%; /* Altura do carrossel */
+          display: flex; /* Exibe as imagens em uma linha horizontal */
+          transition: transform 0.5s ease-in-out; /* Define a transição suave */
+        }
+    
+        .slider img {
+          width: 100%; /* Largura da imagem dentro do carrossel */
+          height: auto; /* Altura automática para manter a proporção da imagem */
+        }
+    
+        /* Estilo dos botões de navegação */
+        .slider-container .prev,
+        .slider-container .next {
+          position: absolute; /* Posição absoluta em relação ao carrossel */
+          top: 50%; /* Alinha verticalmente no meio */
+          transform: translateY(-50%); /* Move o botão para cima em 50% da sua altura */
+          background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo do botão */
+          color: #fff; /* Cor do texto do botão */
+          padding: 10px; /* Espaçamento interno do botão */
+          cursor: pointer; /* Cursor de mão ao passar o mouse */
+          z-index: 1; /* Posição em relação aos elementos no carrossel */
+        }
+    
+        .slider-container .prev {
+          left: 10px; /* Posição do botão "Anterior" */
+        }
+    
+        .slider-container .next {
+          right: 10px; /* Posição do botão "Próximo" */
+        }
+      </style>
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          var slider = document.querySelector(".slider");
+          var slideWidth = slider.offsetWidth;
+          var currentIndex = 0;
+          var totalSlides = slider.childElementCount;
+    
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+          }
+    
+          function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+          }
+    
+          document.querySelector(".next").addEventListener("click", nextSlide);
+          document.querySelector(".prev").addEventListener("click", prevSlide);
+        });
+      </script>
+
+      
+    <link rel="icon" type="imagem/x-icon" href="imagens/logonova.ico">
+</head>
+    <body>
+        <!-- Navbar -->
+        <ul>
+            <li><a href="HOME.html">HOME</a></li>
+            <li><a href="RECONHECIMENTO.html">RECONHECIMENTO FACIAL</a></li> 
+            <li><a href="Retina.html">SISTEMA DE RETINA</a></li> 
+            <li><a href="SobreNos.html">SOBRE-NOS</a></li> 
+        </ul>
+        <center>
+        <h1>My Security</h1>
+        <p>My Security é uma empresa que irá trabalhar em conjunto com o governo, todos sabemos que a maior dificuldade hoje para segurança pública é o reconhecimento do cidadão de forma segura e eficaz, com isso a My security desenvolveu um sistema de reconhecimento facial e reconhecimento de Iris.
+            <div class="slider-container">
+                <div class="slider">
+                  <img src="imagens/publico.jpg" alt="Imagem 1" />
+                  <img src="imagens/publico2.jpg" alt="Imagem 2" />
+                  <img src="imagens/publico3.jpg" alt="Imagem 3" />
+                  <img src="imagens/publico4.avif" alt="Imagem 3" />
+                </div>
+                <div class="prev">&#10094;</div>
+                <div class="next">&#10095;</div>
+              </div>
+            </center>
+        </p>
+        <br>
+        <br>
+        <p></p>
+        
+        
+
+    </body>
+</html>
